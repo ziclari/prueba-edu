@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --font-header: 'EB Garamond', serif;
+  --font-primary: 'Helvetica Neue', sans-serif;
+  --color-primary: oklch(0.419 0.1428 255.96);
+  --color-accent: oklch(0.828 0.0543 223.84);
+}

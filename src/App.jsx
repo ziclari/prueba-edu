@@ -1,11 +1,10 @@
 import './App.css'
+import OnBoarding from './components/onBoarding';
 
 function App() {
   return (
     <>
-       <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
+       <OnBoarding/>
     </>
   )
 }
