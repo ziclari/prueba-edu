@@ -1,5 +1,6 @@
 import './App.css'
 import OnBoarding from './components/onBoarding';
+import AccountingTable from './components/excerciseTable';
 import Excercise from './components/excercise';
 import Button from "./components/button";
 import useLocalStorage from './hooks/useLocalStorage';
@@ -35,7 +36,9 @@ function App() {
         icon="mdi:star-outline"
         iconPosition="left"
       />
-      <Excercise problem={problem} />
+      <Excercise problem={problem}>
+        <AccountingTable/>
+      </Excercise>
       {showOnboarding && <OnBoarding onClose={() => setShowOnboarding(false)} />}
     </>
   )

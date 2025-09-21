@@ -1,5 +1,5 @@
 export default function Excercise(
-    {problem}
+    {problem, children}
 ) {
   return (
     <div className="max-w-3xl mx-auto p-4">
@@ -14,6 +14,7 @@ export default function Excercise(
                 ))}
             </ul>
         </div>
+        {children}
     </div>
   );
 }
