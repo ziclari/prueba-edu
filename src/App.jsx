@@ -1,10 +1,17 @@
 import './App.css'
 import OnBoarding from './components/onBoarding';
 import Button from "./components/button";
-import { useState } from 'react';
+import useLocalStorage from './hooks/useLocalStorage';
+
+const SAVED_KEYS = {
+  showOnboarding: 'showOnboarding',
+}
 
 function App() {
-  const [showOnboarding, setShowOnboarding] = useState(true);
+  const [showOnboarding, setShowOnboarding] = useLocalStorage(
+    SAVED_KEYS.showOnboarding,
+    true
+  );
 
   return (
     <>
