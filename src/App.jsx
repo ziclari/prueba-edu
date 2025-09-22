@@ -10,13 +10,15 @@ import { initialData } from './data/accountingInitialData';
 import { SAVED_KEYS } from './data/localSavedKeys';
 import { accountingProblem } from './data/accountingProblem';
 import ValidationModal from './components/validationModal';
+import InstruccionsModal from './components/instructionsModal';
 
 function App() {
   const [data, setData] = useState(initialData);
   const [validation, setValidation] = useState(null);
+  const [showInstructions, setShowInstructions] = useState(false);
   const [showOnboarding, setShowOnboarding] = useLocalStorage(
     SAVED_KEYS.showOnboarding,
-    true
+    false
   );
   
   
@@ -36,14 +38,22 @@ function App() {
 
     <div className="max-w-3xl mx-auto p-4">
       <h1 className='text-3xl font-bold text-center font-header mb-2'>{accountingProblem.title}</h1>
-      <div className='text-md'>
+      <div className='inline-flex gap-2 flex-wrap justify-center w-full'>
+        <Button
+          onClick={() => setShowInstructions(true)}
+          title="Cómo llenar la tabla"
+          type="helper"
+          icon="mdi:information-outline"
+          iconPosition="left"
+          textSize='text-md'
+        />
         <Button
           onClick={() => setShowOnboarding(true)}
-          title="Ver bienvenida de nuevo"
+          title="Ver bienvenida"
           type="helper"
           icon="mdi:star-outline"
           iconPosition="left"
-          textSize='md'
+          textSize='text-md'
         />
       </div>
       <hr className='text-gray-300 mb-4'/>
@@ -69,6 +79,7 @@ function App() {
       </div>
       
       {showOnboarding && <OnBoarding onClose={() => setShowOnboarding(false)} />}
+      { showInstructions && <InstruccionsModal onClose={() => setShowInstructions(false)} /> }
     </div>
     </>
   )
