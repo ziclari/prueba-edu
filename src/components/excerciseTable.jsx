@@ -112,7 +112,7 @@ export default function AccountingTable() {
                 }`}>
                 <input
                     type="text"
-                    value={row.cargo}
+                    value={row.cargo ? formatCurrency(row.cargo) : ''}
                     onChange={(e) => handleChange(i, "cargo", e.target.value)}
                     className="w-full px-3 py-2 outline-none hover:bg-white/60 focus:bg-white focus:ring-2 focus:ring-blue-400 transition-all"
                 />
@@ -129,7 +129,7 @@ export default function AccountingTable() {
                 }`}>
                 <input
                     type="text"
-                    value={row.abono}
+                    value={row.abono ? formatCurrency(row.abono) : ''}
                     onChange={(e) => handleChange(i, 'abono', e.target.value)}
                     className="w-full rounded-md px-3 py-2 outline-none hover:bg-white/60 focus:bg-white focus:ring-2 focus:ring-blue-400 transition-all"
                 />
