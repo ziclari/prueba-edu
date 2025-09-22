@@ -4,6 +4,9 @@ import AccountingTable from './components/excerciseTable';
 import Excercise from './components/excercise';
 import Button from "./components/button";
 import useLocalStorage from './hooks/useLocalStorage';
+import { useState } from 'react';
+import { validateAnswers } from './helpers/validateAnswers';
+import { initialData } from './data/accInitialData';
 
 const SAVED_KEYS = {
   showOnboarding: 'showOnboarding',
@@ -26,6 +29,19 @@ function App() {
     SAVED_KEYS.showOnboarding,
     true
   );
+  
+  const [data, setData] = useState(initialData);
+  const [validation, setValidation] = useState(null);
+
+  const handleValidate = () => {
+    const validationResult = validateAnswers(data);
+    setValidation(validationResult);
+  };
+
+   const handleReset = () => {
+    setData(initialData);
+    setValidation(null);
+  };
 
   return (
     <>
@@ -44,9 +60,33 @@ function App() {
         />
       </div>
       <hr className='text-gray-300 mb-4'/>
+
       <Excercise problem={problem}>
-        <AccountingTable/>
+        <AccountingTable data={data} setData={setData} validation={validation}/>
       </Excercise>
+      
+
+    {validation&& 
+    <p>
+        Aciertos: {validation.summary.correctAnswers} / {validation.summary.totalQuestions}
+        ({validation.summary.percentage}%)
+    </p>}
+    
+
+      <div className='fixed inset-x-0 bottom-0 bg-white border border-gray-300 py-4 px-8 inline-flex justify-end gap-4'>
+        <Button
+          onClick={handleReset}
+          title="Limpiar"
+          type='secondary'
+          textSize='justify-center'
+        />
+        <Button
+          onClick={handleValidate}
+          title="Revisar"
+          textSize='text-xl w-sm justify-center'
+        />
+      </div>
+      
       {showOnboarding && <OnBoarding onClose={() => setShowOnboarding(false)} />}
     </div>
     </>
