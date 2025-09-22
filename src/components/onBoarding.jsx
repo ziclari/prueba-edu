@@ -19,7 +19,7 @@ export default function OnBoarding({onClose}) {
                 <p className="font-primary text-2xl">Clasifica las operaciones en CARGO o ABONO.</p>
                 <p className="font-primary text-lg italic font-bold text-white/70">Los cálculos totales se harán automáticamente</p>
             </div>
-            <div className="w-full flex justify-end mb-4">
+            <div className="w-full flex justify-end mb-4 mt-8">
                 <Button 
                     title="Entendido, Empezar" 
                     type="secondary" 
