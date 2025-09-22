@@ -5,10 +5,11 @@ export default function Button({
     type = "primary", 
     onClick, 
     icon,
-    iconPosition = "right" 
+    iconPosition = "right",
+    textSize='text-lg'
 }) {
   const base =
-    "font-primary mt-8 px-6 py-3 rounded-full font-bold text-lg transition cursor-pointer inline-flex items-center gap-2";
+    "font-primary px-6 py-3 rounded-full font-bold transition cursor-pointer inline-flex items-center gap-2";
 
   const variants = {
     primary:
@@ -22,7 +23,7 @@ export default function Button({
   return (
     <button
       onClick={onClick}
-      className={`${base} ${variants[type] || variants.primary}`}
+      className={`${base} ${textSize} ${variants[type] || variants.primary}`}
     >
       {icon && iconPosition==="left" && <Icon icon={icon}/>}
       {title}

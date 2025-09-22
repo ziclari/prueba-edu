@@ -94,7 +94,7 @@ export default function AccountingTable() {
   };
 
   return (<>
-    <table className="mt-6 w-full border-separate border-spacing-0 rounded-2xl overflow-hidden shadow-sm font-primary">
+    <table className="mt-6 w-full border-separate border border-gray-400 border-spacing-0 rounded-2xl overflow-hidden shadow-sm font-primary">
     <thead>
         <tr>
             <th className='bg-gray-100 border-b-2 border-gray-300'></th>
