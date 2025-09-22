@@ -2,7 +2,7 @@ export default function Excercise(
     {problem, children}
 ) {
   return (
-    <div className="space-y-4 h-dvh">
+    <div className="space-y-4 min-h-screen pb-[150px] md:pb-[180px]">
         <p className="font-primary text-lg">{problem.description}</p>
         <ul className="list-disc pl-5">
             {problem.steps.map((item, index) => (
