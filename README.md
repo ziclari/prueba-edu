@@ -1,5 +1,7 @@
 # Ejercitador de Contabilidad
 
+🕸️ [Demo en línea disponible aquí](https://ziclari.github.io/prueba-edu/) — sin instalación, solo abre y explora.
+
 Una aplicación interactiva construida con **Vite + React**, diseñada simular un objeto de aprendizaje, accesible y responsiva.
 
 ## Características
