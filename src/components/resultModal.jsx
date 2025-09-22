@@ -6,17 +6,17 @@ export default function ResultModal({ type = "neutral",title, message, score, on
     correct: {
       color: "text-green-700",
       icon: "mdi:check-circle",
-      sound: "/sounds/correct.mp3",
+      sound: "/prueba-edu/sounds/correct.mp3",
     },
     incorrect: {
       color: "text-gray-300",
       icon: "mdi:close-circle",
-      sound: "/sounds/incorrect.mp3",
+      sound: "/prueba-edu/sounds/incorrect.mp3",
     },
     neutral: {
       color: "text-gray-500",
       icon: "mdi:minus-circle",
-      sound: "/sounds/neutral.mp3",
+      sound: "/prueba-edu/sounds/neutral.mp3",
     },
   };
 
