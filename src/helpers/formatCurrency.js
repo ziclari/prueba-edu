@@ -1,4 +1,4 @@
-export default function formatCurrency(value) {
+export function formatCurrency(value) {
   if (!value || value === 0) return '';
   return new Intl.NumberFormat('es-MX', {
     style: 'currency',

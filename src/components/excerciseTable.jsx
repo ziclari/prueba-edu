@@ -1,4 +1,4 @@
-import formatCurrency from '../helpers/formatCurrency';
+import { formatCurrency } from '../helpers/formatCurrency';
 
 export default function AccountingTable({data, setData, validation}) {
 
