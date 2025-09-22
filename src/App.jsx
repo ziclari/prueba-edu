@@ -9,6 +9,7 @@ import { validateAnswers } from './helpers/validateAnswers';
 import { initialData } from './data/accountingInitialData';
 import { SAVED_KEYS } from './data/localSavedKeys';
 import { accountingProblem } from './data/accountingProblem';
+import ValidationModal from './components/validationModal';
 
 function App() {
   const [data, setData] = useState(initialData);
@@ -17,6 +18,7 @@ function App() {
     SAVED_KEYS.showOnboarding,
     true
   );
+  
   
   const handleValidate = () => {
     const validationResult = validateAnswers(data);
@@ -50,13 +52,7 @@ function App() {
         <AccountingTable data={data} setData={setData} validation={validation}/>
       </Excercise>
       
-
-    {validation&& 
-    <p>
-        Aciertos: {validation.summary.correctAnswers} / {validation.summary.totalQuestions}
-        ({validation.summary.percentage}%)
-    </p>}
-    
+      {validation && <ValidationModal validation={validation}/>}
 
       <div className='fixed inset-x-0 bottom-0 bg-white border border-gray-300 py-4 px-8 inline-flex justify-end gap-4'>
         <Button
